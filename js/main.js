@@ -64,3 +64,44 @@ const statObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 statNumbers.forEach(el => statObserver.observe(el));
+// --- PORTFOLIO FILTERING ---
+const filterBtns = document.querySelectorAll('.filter-btn');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+if (filterBtns.length > 0 && portfolioItems.length > 0) {
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active class from all buttons
+      filterBtns.forEach(b => b.classList.remove('active'));
+      // Add active class to clicked button
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      portfolioItems.forEach(item => {
+        if (filterValue === 'all' || item.classList.contains(filterValue)) {
+          item.style.display = 'block';
+          // Small timeout to allow display:block to apply before animating opacity
+          setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+          }, 50);
+        } else {
+          item.style.opacity = '0';
+          item.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            item.style.display = 'none';
+          }, 400); // Matches the CSS transition duration if we had one, but 400ms is a smooth fade out
+        }
+      });
+      
+      // Refresh ScrollTrigger so the grid calculations update
+      if (typeof ScrollTrigger !== 'undefined') {
+        setTimeout(() => {
+          ScrollTrigger.refresh();
+        }, 450);
+      }
+    });
+  });
+}
+

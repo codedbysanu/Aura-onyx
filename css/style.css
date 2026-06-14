@@ -1454,3 +1454,185 @@ cite {
     gap: 3rem;
   }
 }
+/* ========================================
+   PORTFOLIO PAGE STYLES
+   ======================================== */
+
+.portfolio-section {
+  padding: 6rem 0 10rem;
+  background-color: var(--bg-light);
+}
+
+/* --- FILTERS --- */
+.portfolio-filters {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+.filter-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding-bottom: 0.5rem;
+  position: relative;
+  transition: color var(--transition);
+}
+
+.filter-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem; /* Aligns with the border-bottom of the parent container */
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--gold);
+  transition: width 0.4s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  color: var(--text-dark);
+}
+
+.filter-btn.active::after {
+  width: 100%;
+}
+
+/* --- MASONRY GRID --- */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 400px;
+  gap: 2rem;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Asymmetric sizing for the editorial look */
+.portfolio-item.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.portfolio-item.tall {
+  grid-row: span 2;
+}
+
+.portfolio-img-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.portfolio-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s ease;
+}
+
+.portfolio-item:hover .portfolio-img-wrap img {
+  transform: scale(1.05);
+}
+
+/* --- HOVER OVERLAY --- */
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(28,25,23,0.9) 0%,
+    rgba(28,25,23,0.4) 50%,
+    rgba(28,25,23,0.1) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 3rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.overlay-text {
+  transform: translateY(20px);
+  transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover .overlay-text {
+  transform: translateY(0);
+}
+
+.overlay-text h3 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--text-light);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.overlay-text p {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: rgba(245,239,230,0.7);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+/* Ensure the button text inside the overlay inherits the gold color correctly */
+.overlay-text .btn-text {
+  margin-top: 0;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .portfolio-filters {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 350px;
+  }
+  
+  .portfolio-item.large,
+  .portfolio-item.tall {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  
+  .portfolio-overlay {
+    opacity: 1;
+    background: linear-gradient(
+      to top,
+      rgba(28,25,23,0.8) 0%,
+      transparent 100%
+    );
+    padding: 2rem;
+  }
+  
+  .overlay-text {
+    transform: translateY(0);
+  }
+}
+
