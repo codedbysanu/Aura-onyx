@@ -1,0 +1,102 @@
+/* ========================================
+   AURA & ONYX — ANIMATIONS
+   ======================================== */
+
+/* --- SCROLL REVEAL BASE STATES --- */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal-up.visible,
+.reveal-right.visible {
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* --- STAGGER DELAYS --- */
+.reveal-up:nth-child(2) { transition-delay: 0.1s; }
+.reveal-up:nth-child(3) { transition-delay: 0.2s; }
+.reveal-up:nth-child(4) { transition-delay: 0.3s; }
+.reveal-up:nth-child(5) { transition-delay: 0.4s; }
+
+/* --- 3D CARD TILT (project cards) --- */
+.project-card {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: perspective(800px) rotateY(-4deg) rotateX(2deg) translateY(-6px);
+  box-shadow: 20px 20px 60px rgba(28,25,23,0.25);
+}
+
+/* --- STAT NUMBER COUNT-UP PREP --- */
+.stat-number {
+  transition: color 0.3s ease;
+}
+
+/* --- NAVBAR TRANSITION --- */
+.navbar {
+  transition: background 0.4s ease, padding 0.4s ease, border 0.4s ease;
+}
+
+/* --- HERO PARALLAX PREP --- */
+.hero {
+  will-change: background-position;
+}
+
+/* --- QUOTE SECTION FADE --- */
+.quote-inner {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
+}
+
+.quote-inner.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- TICKER PAUSE ON HOVER --- */
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+/* --- IMAGE ACCENT LINE ANIMATION --- */
+.image-accent-line {
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  opacity: 0.5;
+}
+
+.welcome-image:hover .image-accent-line {
+  transform: translate(8px, 8px);
+  opacity: 1;
+}
+
+/* --- GOLD UNDERLINE EFFECT --- */
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
