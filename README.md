@@ -50,7 +50,7 @@ Bespoke entrance animations, parallax image scrolls, and staggered component rev
 
 ## ✦ Project Structure
 
-text
+```text
 aura-onyx/
 ├── index.html          # The Atelier (Home)
 ├── about.html          # The Visionaries
@@ -67,6 +67,7 @@ aura-onyx/
     ├── main.js         # Core Logic & Fallbacks
     └── animations.js   # GSAP ScrollTrigger Configurations
 
+```
 ---
 
 ## ✦ Development & Engineering
