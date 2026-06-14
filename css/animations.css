@@ -16,10 +16,12 @@
 }
 
 .reveal-up.visible,
-.reveal-right.visible {
-  opacity: 1;
-  transform: translate(0);
+.reveal-right.visible,
+.quote-inner.visible {
+  opacity: 1 !important;
+  transform: translate(0) !important;
 }
+
 
 /* --- STAGGER DELAYS --- */
 .reveal-up:nth-child(2) { transition-delay: 0.1s; }
@@ -100,3 +102,17 @@
 .nav-links a:hover::after {
   width: 100%;
 }
+/* NUCLEAR FALLBACK: Force reveal if JS fails */
+.reveal-up, 
+.reveal-right, 
+.quote-inner {
+  animation: forceReveal 0.5s ease forwards 2s;
+}
+
+@keyframes forceReveal {
+  to { 
+    opacity: 1 !important; 
+    transform: translate(0) !important; 
+  }
+}
+

@@ -1,8 +1,6 @@
 // ========================================
 // AURA & ONYX — MAIN JS (CRASH-PROOF)
-// ========================================
-
-document.addEventListener('DOMContentLoaded', () => {
+// =======================================nano js/main.js
   
   // --- NAVBAR SCROLL EFFECT ---
   const navbar = document.getElementById('navbar');
@@ -119,5 +117,3 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-});
-
