@@ -1,4 +1,5 @@
-/* ========================================
+/* ========================================nd
+
    AURA & ONYX — MASTER STYLESHEET
    ======================================== */
 
@@ -769,5 +770,473 @@ cite {
 
   .project-image-wrap {
     height: 300px;
+  }
+}
+/* ========================================
+   ABOUT PAGE STYLES
+   ======================================== */
+
+/* --- PAGE HERO (all inner pages) --- */
+.page-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  transition: transform 8s ease;
+}
+
+.page-hero:hover .page-hero-bg {
+  transform: scale(1);
+}
+
+.page-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(28,25,23,0.6) 0%,
+    rgba(28,25,23,0.45) 60%,
+    rgba(28,25,23,0.7) 100%
+  );
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 1.5rem;
+}
+
+.page-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 300;
+  color: var(--text-light);
+  line-height: 1.1;
+  margin-top: 1rem;
+}
+
+.page-hero-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* --- INTRO STRIP --- */
+.intro-strip {
+  background-color: var(--bg-dark);
+  padding: 3rem 0;
+  border-bottom: 1px solid rgba(201,169,110,0.15);
+}
+
+.intro-strip-text {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-light);
+  text-align: center;
+  opacity: 0.85;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* --- ABOUT STORY --- */
+.about-story {
+  padding: 8rem 0;
+  background-color: var(--bg-light);
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.about-story-images {
+  position: relative;
+}
+
+.story-img-main {
+  height: 520px;
+  overflow: hidden;
+}
+
+.story-img-main img {
+  transition: transform 0.7s ease;
+}
+
+.story-img-main:hover img {
+  transform: scale(1.04);
+}
+
+.story-img-secondary {
+  position: absolute;
+  bottom: -3rem;
+  right: -2rem;
+  width: 55%;
+  height: 220px;
+  overflow: hidden;
+  border: 4px solid var(--bg-light);
+}
+
+.story-year-badge {
+  position: absolute;
+  top: 2rem;
+  left: -1.5rem;
+  background-color: var(--gold);
+  color: var(--bg-dark);
+  padding: 1rem 1.2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.story-year-badge span {
+  font-family: var(--font-sans);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.story-year-badge strong {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.about-awards {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.award-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.award-number {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.award-label {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+
+/* --- PHILOSOPHY --- */
+.philosophy-section {
+  position: relative;
+  padding: 10rem 0;
+  overflow: hidden;
+}
+
+.philosophy-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.philosophy-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20,18,16,0.82);
+}
+
+.philosophy-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.philosophy-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  color: var(--text-light);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.philosophy-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.philosophy-body {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(245,239,230,0.7);
+  line-height: 1.9;
+  max-width: 600px;
+  margin-bottom: 3rem;
+}
+
+.philosophy-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.pillar {
+  border-top: 1px solid rgba(201,169,110,0.3);
+  padding-top: 1.5rem;
+}
+
+.pillar-icon {
+  display: block;
+  color: var(--gold);
+  font-size: 0.7rem;
+  margin-bottom: 0.8rem;
+}
+
+.pillar h4 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.pillar p {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgba(245,239,230,0.55);
+  line-height: 1.7;
+}
+
+/* --- AESTHETIC SECTION --- */
+.aesthetic-section {
+  padding: 8rem 0;
+  background-color: var(--bg-linen);
+}
+
+.aesthetic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.aesthetic-mosaic {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  height: 560px;
+}
+
+.mosaic-tall {
+  grid-row: span 2;
+}
+
+.mosaic-item {
+  overflow: hidden;
+}
+
+.mosaic-item img {
+  transition: transform 0.6s ease;
+}
+
+.mosaic-item:hover img {
+  transform: scale(1.05);
+}
+
+.mosaic-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mosaic-col .mosaic-item {
+  flex: 1;
+}
+
+/* --- TEAM --- */
+.team-section {
+  padding: 8rem 0;
+  background-color: var(--bg-light);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-img-wrap {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+}
+
+.team-img-wrap img {
+  transition: transform 0.6s ease;
+}
+
+.team-card:hover .team-img-wrap img {
+  transform: scale(1.05);
+}
+
+.team-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(28,25,23,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.team-card:hover .team-overlay {
+  opacity: 1;
+}
+
+.team-overlay p {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text-light);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.team-info {
+  padding: 1.8rem 0 0;
+}
+
+.team-name {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-dark);
+  margin-bottom: 0.3rem;
+}
+
+.team-role {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.team-bio {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* --- CTA STRIP --- */
+.cta-strip {
+  background-color: var(--bg-dark);
+  padding: 6rem 0;
+  border-top: 1px solid rgba(201,169,110,0.15);
+}
+
+.cta-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.cta-strip-inner h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--text-light);
+  line-height: 1.2;
+}
+
+.cta-strip-inner h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* --- ABOUT PAGE RESPONSIVE --- */
+@media (max-width: 900px) {
+  .about-story-grid,
+  .aesthetic-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .story-img-secondary {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    width: 100%;
+    height: 200px;
+    margin-top: 1rem;
+    border: none;
+  }
+
+  .story-year-badge {
+    left: 1rem;
+  }
+
+  .philosophy-pillars {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .aesthetic-mosaic {
+    height: 400px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-img-wrap {
+    height: 320px;
+  }
+
+  .cta-strip-inner {
+    flex-direction: column;
+    text-align: center;
   }
 }
