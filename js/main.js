@@ -117,3 +117,34 @@
       });
     });
   }
+// --- FAQ ACCORDION ---
+const faqItems = document.querySelectorAll('.faq-item');
+
+if (faqItems.length > 0) {
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+
+    question.addEventListener('click', () => {
+      const isOpen = item.classList.contains('active');
+
+      // Close all other open accordions (optional premium feel)
+      faqItems.forEach(otherItem => {
+        otherItem.classList.remove('active');
+        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+      });
+
+      // If the clicked one wasn't open, open it now
+      if (!isOpen) {
+        item.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+      
+      // Refresh ScrollTrigger to recalculate page height
+      if (typeof ScrollTrigger !== 'undefined') {
+        setTimeout(() => { ScrollTrigger.refresh(); }, 600);
+      }
+    });
+  });
+}
+
