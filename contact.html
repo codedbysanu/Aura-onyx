@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Aura & Onyx</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html">
+          <span class="logo-main">Aura & Onyx</span>
+          <span class="logo-sub">Bespoke Interiors & Spatial Design</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="process.html">Process</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600&q=80');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="hero-eyebrow reveal-up">Get in Touch</p>
+      <h1 class="page-hero-title reveal-up">Begin the<br/><em>Conversation.</em></h1>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+        
+        <!-- CONTACT INFO -->
+        <div class="contact-info reveal-right">
+          <p class="section-eyebrow">The Atelier</p>
+          <h2 class="section-title">Let's craft your<br/><em>legacy.</em></h2>
+          <p class="body-text">We accept a strictly limited number of commissions per year to ensure uncompromising quality and absolute discretion for our clientele.</p>
+          
+          <div class="info-blocks">
+            <div class="info-block">
+              <h4>Headquarters</h4>
+              <p>440 High Street<br/>Design District, Metropolis<br/>NY 10013</p>
+            </div>
+            
+            <div class="info-block">
+              <h4>Direct Inquiries</h4>
+              <p>hello@auraandonyx.design<br/>+1 (555) 019-8372</p>
+            </div>
+
+            <div class="info-block">
+              <h4>Digital & Development</h4>
+              <div class="social-links">
+                <a href="https://github.com/codedbysanu" target="_blank">Engineered by CodedBySanu (GitHub) ↗</a>
+                <a href="#">Instagram</a>
+                <a href="#">Architectural Digest</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORM -->
+        <div class="contact-form-wrapper reveal-up">
+          <!-- Formspree Endpoint -->
+          <form action="https://formspree.io/f/xrevrlrg" method="POST" class="luxury-form">
+            
+            <div class="form-row">
+              <div class="input-group">
+                <input type="text" id="name" name="name" placeholder=" " required>
+                <label for="name">Full Name</label>
+              </div>
+              <div class="input-group">
+                <input type="email" id="email" name="email" placeholder=" " required>
+                <label for="email">Email Address</label>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <input type="text" id="location" name="location" placeholder=" " required>
+              <label for="location">Project Location (City, Country)</label>
+            </div>
+
+            <div class="form-row">
+              <div class="input-group select-group">
+                <select id="service" name="service" required>
+                  <option value="" disabled selected>Select Service...</option>
+                  <option value="Residential">Residential Design</option>
+                  <option value="Commercial">Commercial Space</option>
+                  <option value="Bespoke Sourcing">Bespoke Furniture Sourcing</option>
+                </select>
+              </div>
+              <div class="input-group select-group">
+                <select id="budget" name="budget" required>
+                  <option value="" disabled selected>Anticipated Budget...</option>
+                  <option value="$50k - $100k">$50,000 - $100,000</option>
+                  <option value="$100k - $250k">$100,000 - $250,000</option>
+                  <option value="$250k+">$250,000+</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+              <label for="message">Tell us about your vision...</label>
+            </div>
+
+            <button type="submit" class="btn-primary form-submit">Submit Inquiry</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-main">Aura & Onyx</span>
+          <p>Bespoke Interiors & Spatial Design</p>
+          <p class="footer-address">440 High Street, Design District, Metropolis</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="process.html">Our Process</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Get In Touch</h4>
+          <p>hello@auraandonyx.design</p>
+          <p>+1 (555) 019-8372</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Aura & Onyx. All rights reserved.</p>
+        <p>Crafted with intention. <a href="https://github.com/codedbysanu" target="_blank" style="color:var(--gold);">Dev: CodedBySanu</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+
+</body>
+</html>
+
