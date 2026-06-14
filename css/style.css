@@ -1636,3 +1636,135 @@ cite {
   }
 }
 
+/* ========================================
+   PROCESS PAGE STYLES
+   ======================================== */
+
+.process-timeline {
+  padding: 10rem 0;
+  background-color: var(--bg-light);
+  position: relative;
+}
+
+/* Central Golden Line for Desktop */
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  top: 10rem;
+  bottom: 10rem;
+  left: 50%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(201,169,110,0.4), transparent);
+  transform: translateX(-50%);
+}
+
+.timeline-step {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8rem;
+  align-items: center;
+  margin-bottom: 10rem;
+  position: relative;
+}
+
+.timeline-step:last-child {
+  margin-bottom: 0;
+}
+
+.step-visual {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.step-reverse .step-visual {
+  justify-content: flex-start;
+}
+
+.step-num {
+  font-family: var(--font-serif);
+  font-size: 12rem;
+  font-weight: 300;
+  color: var(--gold);
+  opacity: 0.08;
+  line-height: 0.8;
+  position: absolute;
+  top: -3rem;
+  left: 0;
+  z-index: 1;
+}
+
+.step-reverse .step-num {
+  left: auto;
+  right: 0;
+}
+
+.step-img {
+  width: 85%;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  box-shadow: 20px 20px 60px rgba(28,25,23,0.08);
+}
+
+.step-img img {
+  transition: transform 0.8s ease;
+}
+
+.timeline-step:hover .step-img img {
+  transform: scale(1.04);
+}
+
+.step-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 0;
+}
+
+.step-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.step-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .process-timeline::before {
+    display: none; /* Hide center line on mobile */
+  }
+
+  .timeline-step,
+  .timeline-step.step-reverse {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-bottom: 6rem;
+  }
+
+  .step-visual, 
+  .step-reverse .step-visual {
+    justify-content: center;
+  }
+
+  .step-img {
+    width: 100%;
+    height: 350px;
+  }
+
+  .step-num, 
+  .step-reverse .step-num {
+    font-size: 8rem;
+    top: -2rem;
+    left: 1rem;
+    right: auto;
+  }
+}
+
