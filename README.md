@@ -66,14 +66,18 @@ aura-onyx/
 └── js/
     ├── main.js         # Core Logic & Fallbacks
     └── animations.js   # GSAP ScrollTrigger Configurations
-✦ Development & Engineering
-​Crafted with intention by CodedBySanu.
-​This project serves as a masterclass in front-end aesthetics, proving that luxury digital experiences require both artistic restraint and rigorous, crash-proof engineering.
-​<div align="center">
-<i>"Architecture is the frame. Interior design is the soul."</i>
-</div> ✦ Development & Engineering
-​Crafted with intention by CodedBySanu.
-​This project serves as a masterclass in front-end aesthetics, proving that luxury digital experiences require both artistic restraint and rigorous, crash-proof engineering.
-​<div align="center">
-<i>"Architecture is the frame. Interior design is the soul."</i>
+
+---
+
+## ✦ Development & Engineering
+
+Crafted with intention by **[CodedBySanu](https://github.com/codedbysanu)**. 
+
+This project serves as a masterclass in front-end aesthetics, proving that luxury digital experiences require both artistic restraint and rigorous, crash-proof engineering. 
+
+<br/>
+
+<div align="center">
+  <i>"Architecture is the frame. Interior design is the soul."</i>
 </div>
+
